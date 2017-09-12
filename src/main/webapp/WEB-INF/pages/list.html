@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>  
+<html>  
+<head>  
+    <title>Simple AJAX .JSON load example</title>  
+</head>  
+<body>  
+   
+    <form>  
+        <input id="btn"  
+                type="button"  
+                value="ajax load"  
+                onclick="queryUserArticles();" />  
+    </form>  
+   
+    <div id="debug"></div>  
+   
+    <script type="text/javascript">  
+        function queryUserArticles() {  
+            ajaxLoad("../article/listArticle", ajaxOnResult);  
+        }  
+   
+        function ajaxLoad(uri, callback) {  
+            var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");  
+            request.onreadystatechange = callback;  
+            request.open("GET", uri);  
+            request.send(null);  
+        }  
+   
+        function ajaxOnResult(evt) {  
+            if ((evt.currentTarget.readyState == 4) && (evt.currentTarget.status == 200 || evt.currentTarget.status == 0)) {  
+                var f = document.getElementById("debug");  
+                f.innerHTML = "<h1>HTTP status: "+ evt.currentTarget.status +"</h1>" +  
+                        "<p>This text should be replaced after JSON.parse() call.</p>";  
+                var json_data = JSON.parse(evt.currentTarget.responseText); 
+                for(var i=0;i < json_data.length;i++){
+                	f.innerHTML += "<a>"+json_data[i].user.userName + json_data[i].content + json_data[i].title+"</a>"+"<hr/>";  
+                }
+            }  
+        }  
+    </script>  
+   
+</body>  
+</html>  

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lyg.dao.UserMapper">
+	
+	<resultMap type="User" id="resultListUser">
+		<id column="id" property="id" />
+		<result column="userName" property="userName" />
+		<result column="userAge" property="userAge" />
+		<result column="userAddress" property="userAddress" />
+		<result column="picPath" property="picPath" />
+	</resultMap>
+	
+	<select id="selectUserByID" parameterType="int" resultType="User">
+		select * from user where id = #{id}
+	</select>
+	<select id="selectUsers" parameterType="String" resultMap="resultListUser">
+		select * from user where userName = #{userName}
+	</select>
+	<insert id="addUser" parameterType="User" useGeneratedKeys="true"
+		keyProperty="id">
+		insert into user(userName,password,userAge,userAddress,picPath)
+		values(#{userName},#{password},#{userAge},#{userAddress},#{picPath})
+	</insert>
+	<select id="login" parameterType="User" resultType="User">
+		select * from user where userName = #{userName} and password = #{password}
+	</select>
+	<update id="updateUser" parameterType="User">
+		update user set userName=#{userName},userAge=#{userAge},userAddress=#{userAddress}
+		where id=#{id}
+	</update>
+	<delete id="deleteUser" parameterType="int">
+		delete from user where id=#{id}
+	</delete>
+	
+	<resultMap id="resultUserArticleList" type="Article">
+		<!-- 用aid避免与User中的id同名 -->
+		<id property="id" column="aid"/>
+		<result property="title" column="title"/>
+		<result property="content" column="content"/>
+		
+		<association property="user" javaType="User" resultMap="resultListUser"/>
+		<!--  	
+		<association property="user" javaType="User">
+			<id property="id" column="id"/>
+			<result property="userName" column="userName"/>
+			<result property="userAge" column="userAge"/>
+			<result property="userAddress" column="userAddress"/>
+		</association>
+		-->
+	</resultMap>
+	<select id="getUserArticles" parameterType="int" resultMap="resultUserArticleList">
+		 select user.id,user.userName,user.userAddress,article.id as aid,article.title,article.content from user,article 
+              where user.id=article.userid and user.id=#{id}
+	</select>
+</mapper>

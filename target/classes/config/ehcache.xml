@@ -1,0 +1,6 @@
+<ehcache>
+  <cache name="shareOfAdminCache"
+          maxBytesLocalHeap="50m"
+          timeToLiveSeconds="500">
+  </cache>
+</ehcache>

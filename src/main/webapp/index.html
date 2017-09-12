@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登录页面</title>
+<link rel="stylesheet" href="static/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" href="static/css/bootstrap.min.css" />
+<link rel="stylesheet" href="static/css/index.css" />
+</head>
+
+<body>
+	<div class="container loginForm">
+		<form class="form-horizontal" action="/lyg/user/login" method="post">
+			<div class="form-group">
+				<label for="username" class="col-xs-3 control-label">用户名</label>
+				<div class="col-xs-6">
+					<input type="text" class="form-control" name="username"
+						id="username" placeholder="输入用户名">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="password" class="col-xs-3 control-label">密码</label>
+				<div class="col-xs-6">
+					<input type="password" class="form-control" name="password"
+						id="password" placeholder="输入密码">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-3 col-sm-9">
+					<div class="checkbox">
+						<label><input type="checkbox">记住我 ！！！</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-9" style="margin-left: 213px;">
+					<button type="submit" class="btn btn-info col-xs-9">登录</button>
+				</div>
+			</div>
+		</form>
+		<div class="row">
+			<div class="col-xs-9 sign-up">
+				<p>
+					你还没账号？赶紧来<a class="btn btn-link" href="/lyg/user/register">注册</a>呗~★＿⊙~！！
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script src="static/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+</html>

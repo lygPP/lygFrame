@@ -1,0 +1,17 @@
+/*登录模块开始*/
+.loginForm{
+	margin-top: 100px;
+}
+.loginForm h1 {
+	padding-top: 60px;
+	text-align: center;
+	font-size: 3em;
+}
+
+.loginForm form {
+	padding-top: 30px;
+}
+
+.loginForm .sign-up p {
+	text-align: right;
+}

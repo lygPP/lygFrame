@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="/lyg/static/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/lyg/static/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="/lyg/static/css/register.css">
+	</head>
+
+	<body>
+		<div class="container container-register">
+			<form class="form-group registerForm" action="/lyg/user/register" method="post" enctype="multipart/form-data">
+				<div class="col-xs-12" align="center">
+					<input type="file" name="profilePicture"/>
+				</div>
+				<div class="col-xs-12">
+					<label class="col-xs-4 lyg-labl"><span style="color: red;">*</span>用户名：</label>
+					<input class="col-xs-4 lyg-form-input"  type="text" name="userName" required="required" />
+				</div>
+				<div class="col-xs-12">
+					<label class="col-xs-4 lyg-labl"><span style="color: red;">*</span>用户密码：</label>
+					<input class="col-xs-4 lyg-form-input"  type="password" name="password" required="required" />
+				</div>
+				<div class="col-xs-12">
+					<label class="col-xs-4 lyg-labl"><span style="color: red;">*</span>用户年龄：</label>
+					<input class="col-xs-4 lyg-form-input"  type="text" name="userAge" required="required" />
+				</div>
+				<div class="col-xs-12">
+					<label class="col-xs-4 lyg-labl"><span style="color: red;">*</span>用户地址：</label>
+					<input class="col-xs-4 lyg-form-input"  type="text" name="userAddress" required="required" />
+				</div>
+				<div class="col-xs-12" align="center">
+					<input id="" type="Submit" class="button register-btn" value="注册" />
+				</div>
+			</form>
+		</div>
+	</body>
+
+	<script src="/lyg/static/js/bootstrap.min.js"></script>
+
+</html>

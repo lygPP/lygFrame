@@ -1,0 +1,21 @@
+.container-register{
+	margin-top: 100px;
+}
+.registerForm div{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.lyg-labl{
+	text-align: right;
+	margin-top: 10px;
+}
+.lyg-form-input{
+	height: 35px;
+    border-radius: 5px;
+}
+.register-btn{
+	height: 35px;
+    width: 100px;
+    background-color: lemonchiffon;
+    border-radius: 5px;
+}
