@@ -37,5 +37,4 @@ public class SysContent {
 	public void test2(){
 		
 	}
-	/** */
 }
