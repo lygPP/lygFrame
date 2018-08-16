@@ -42,4 +42,7 @@ public class SysContent {
 	}
 	/**lalalala**/
 	/*********************** */
+	public void test4(){
+		
+	}
 }
